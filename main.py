@@ -1,4 +1,4 @@
-                    #            FUNCIONES          #
+#            FUNCIONES          #
 
 
 #Funcion Ingresar nombre
@@ -29,7 +29,7 @@ categoria3 = ["Campera 1","Campera 2","Campera 3","Campera 4","Campera 5"]
 categoria4 = ["Zapatillas 1","Botas 2","Zapatos 3","Sandalias 4","Zapatillas 5"]
 categoria5 = ["Gorro nombre 1","Bufanda 2","Riñonera 3","Lentes de sol nombre 4","Pulsera nombre 5"]
 
-###################################
+#################################
 
 
 #example preguntar al profe
@@ -99,6 +99,20 @@ def consultar_talle(categoria):
     talle = input("Seleccione un talle: ")
     return talle
 
+
+def consultar_talle(categoria):
+    if categoria in ["1", "2", "3", "4"]:
+        print(talles)
+        talle = input("Seleccione un talle: ")
+        # Búsqueda secuencial para validar
+        if talle in talles:
+            return talle
+        else:
+            print("Talle inválido.")
+            return consultar_talle(categoria)  # vuelve a preguntar
+    else:
+        print("Talle único")
+
 #Funcion agregar al carrito
 def agregar_al_carrito(total_actual, categoria):
     if categoria == "1":
@@ -164,4 +178,3 @@ def desea_salir():
 #
 #
 
-print ("adsasd")
