@@ -327,6 +327,38 @@ def Suma_Precio_Total(precio):
     print (preciototal)
     print (iteraciones)
     return preciototal
+
+def BuscarProducto(): 
+
+    buscar = int(input("Desea buscar algo? Ingrese 1 para si o 2 para no"))
+
+    while buscar <1 or buscar > 2 : 
+        print("El numero ingresado no es correcto vuelva a intentarlo: ")
+        buscar = int(input("Desea buscar algo? Ingrese 1 para si o 2 para no"))
+
+    if buscar == 1 :
+
+        producto_existe = False
+        producto = input("Ingrese el nombre del producto que desea buscar: ")
+
+        for i in range(len(lista_productos)):
+            if lista_productos[i] == producto :
+                print(f"""el producto existe y es: {lista_productos[i]}, 
+                El precio del producto es: {lista_precio_productos[i]} 
+                El talle del producto es: , {lista_talles_productos[i]}""")
+
+                eliminar = input("Desea eliminar este producto? (s/n): ")
+                if eliminar == "s" : 
+                    lista_productos.pop(i)
+                    lista_talles_productos.pop(i)
+                    lista_precio_productos.pop(i)
+                    print(f'El producto fue eliminado con exito' )
+                    print("Tus productos son: ", lista_productos)
+
+            else: 
+                print("El producto que busco no existe")
+
+
 #--------------------------programa
 
 salir = True
@@ -364,6 +396,8 @@ while salir :
         seguircomprando = desea_seguir_comprando()
 
     metodo_de_pago = seleccionar_metodo_pago()
+    
+    BuscarProducto()
 
     finalizar_compra()
 
