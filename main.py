@@ -1,5 +1,4 @@
-
-#########################Listas#########################
+#########################Listas#########################More actions
 nombres = []
 lista_productos = []
 lista_talles_productos = []
@@ -27,7 +26,7 @@ categoria5 = ["Gorro nombre 1","Bufanda 2","Riñonera 3","Lentes de sol nombre 4
 def mostrar_menu():
     print("\nSeleccione una categoría de producto:")
     print(productos)
-    
+
     categoria = int(input("Seleccione una opción: "))
 
     while categoria <1 or categoria >5:
@@ -155,41 +154,41 @@ def consultar_talle(categoria):
     if categoria == 1:
         print(talles)
         talle = input("Seleccione un talle: ").upper()
-        
-        while talle != "XS" and talle != "S" and talle != "M" and talle != "L" and talle != "XL" :
-            print("El talle no esta dentro de las opciones dadas")
-            talle = input("Seleccione un talle: ").upper()
-        
-        lista_talles_productos.append(talle)
-        
-    elif categoria == 2:
-        print(talles)
-        talle = input("Seleccione un talle: ").upper()
-        
-        while talle != "XS" and talle != "S" and talle != "M" and talle != "L" and talle != "XL" :
-            print("El talle no esta dentro de las opciones dadas")
-            talle = input("Seleccione un talle: ").upper()
-        
-        lista_talles_productos.append(talle)
-    
-    elif categoria == 3:
-        print(talles)
-        talle = input("Seleccione un talle: ").upper()
-        
+
         while talle != "XS" and talle != "S" and talle != "M" and talle != "L" and talle != "XL" :
             print("El talle no esta dentro de las opciones dadas")
             talle = input("Seleccione un talle: ").upper()
 
         lista_talles_productos.append(talle)
-        
-    elif categoria == 4:
+
+    elif categoria == 2:
         print(talles)
         talle = input("Seleccione un talle: ").upper()
-        
+
         while talle != "XS" and talle != "S" and talle != "M" and talle != "L" and talle != "XL" :
             print("El talle no esta dentro de las opciones dadas")
             talle = input("Seleccione un talle: ").upper()
-    
+
+        lista_talles_productos.append(talle)
+
+    elif categoria == 3:
+        print(talles)
+        talle = input("Seleccione un talle: ").upper()
+
+        while talle != "XS" and talle != "S" and talle != "M" and talle != "L" and talle != "XL" :
+            print("El talle no esta dentro de las opciones dadas")
+            talle = input("Seleccione un talle: ").upper()
+
+        lista_talles_productos.append(talle)
+
+    elif categoria == 4:
+        print(talles)
+        talle = input("Seleccione un talle: ").upper()
+
+        while talle != "XS" and talle != "S" and talle != "M" and talle != "L" and talle != "XL" :
+            print("El talle no esta dentro de las opciones dadas")
+            talle = input("Seleccione un talle: ").upper()
+
         lista_talles_productos.append(talle)
 
     else:
@@ -270,7 +269,7 @@ def agregar_al_carrito(productofin, categoria):
         if productofin == 5 : 
             precio = 405
             lista_precio_productos.append(precio)
-    
+
     elif categoria == 5:
         if productofin == 1 : 
             precio = 501
@@ -402,4 +401,3 @@ while salir :
     finalizar_compra()
 
     salir = desea_salir()
-
