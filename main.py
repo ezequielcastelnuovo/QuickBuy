@@ -1,27 +1,27 @@
+############################################################################# LISTAS #############################################################################
 
-################################################### Listas #########################################################
 
-nombres = []    #nombres de clientes
-lista_productos = []    #productos seleccionados
-lista_talles_productos = []   #talles de los productos que selecciona el usuario, almacena el talle (POR PRODUCTO)
-lista_precio_productos = []   #precios de los productos (Se almacena de manera general al precio GENERAL)
-lista_id = []    #IDs de los productos
+nombres = []  #nombres de clientes
+lista_productos = [] #productos seleccionados 
+lista_talles_productos = [] #talles de los productos que selecciona el usuario, almacena el talle (por producto)
+lista_precio_productos = [] #precios de los productos (se almacena de manera general al precio GENERAL)
+lista_id = [] #Ids de los productos
 
-#Lista Categorias 
-productos = ["1. Remeras","2. Pantalones","3. Camperas","4. Calzado","5. Accesorios"]    #lista de categorias principales
+# Lista de Categorias
+productos = ["1. Remeras","2. Pantalones","3. Camperas","4. Calzado","5. Accesorios"] 
 
-#Lista Talles 
-talles = ["XS","S","M","L","XL"]   #talles ropa
-talles_calzado = ["36","37","38","39","40","41","42","43","44","45"]  #talles calzado
+# Lista de Talles
+talles = ["XS","S","M","L","XL"]    #talles de ropa
+talles_calzado = ["36","37","38","39","40","41","42","43","44","45"]   #talles de calzado
 
-#Listas de productos dentro de la Categoria seleccionada (Remeras, Pantalones, Camperas, Calzado, Accesorios)
+#Listas de productos dentro de la CATEGORIA SELECCIONADA (Remeras, Pantalones, Camperas, Calzados, Accesorios)
 categoria1 = ["1. Camiseta Tape Type Medium Fit en Beige (USD 795)","2. Camiseta Soccer Balenciaga | Automobili Lamborghini Oversized (USD 1100)","3. Camiseta I Love Paris & Balenciaga Oversize en Blanco (USD 450)","4. Camiseta Cropped Diy Imprint en Verde Salvia (USD 695)","5. Camiseta Loop Sports Icon Medium Fit (USD 395)"]
 categoria2 = ["1. Pantalón Baggy Azul Claro (USD 1300)","2. Pantalón De Chándal Balenciaga Nail Polish Cropped (USD 1100)","3. Pantalón Cargo Ancho Azul Oscuro (USD 1800)","4. Pantalón Cargo Flared Negro (USD 1590)","5. Pantalón Baggy Cut-up Azul (USD 1600)"]
 categoria3 = ["1. Bomber - Basketball Series (USD 7500)","2. Chaqueta Round Loop Sports Icon Verde Ciprés (USD 3000)","3. Bomber Round Azul Marino Oscuro (USD 3200)","4. Chaqueta Varsity Lion Club Negro (USD 2600)","5. Chaqueta Tracksuit 3b Sports Icon Negro (USD 5000)"]
-categoria4 = ["1. Zapatillas 3xl Gris (USD 975)","2. Zapatillas 6xl Negro/Gris (USD 995)","3. Zapatillas Runner Graffiti (USD 1100)","4. Bota Venom Negro (USD 1650)","5. Bota Giant Negro (USD 1990)"] 
-categoria5 = ["1. Gorra Loop Sports Icon Azul/blanco (USD 450)","2. Gafas De Sol Blade Rectangle Rojo (USD 465)","3. Casco Negro/blanco (USD 895)","4. Vaso Tumbler Plateado (USD 250)","5. Cinturón Skater Unity Negro (USD 325)"]
+categoria4 = ["1. Zapatillas 3xl Gris (USD 975)","2. Zapatillas 6xl Negro/Gris (USD 995)","3. Zapatillas Runner Graffiti (USD 1100)","4. Bota Venom Negro (USD 1650)","5. Bota Giant Negro (USD 1990)"]
+categoria5 = ["1. Gorra Loop Sports Icon Azul/blanco (USD 450)","2. Gafas De Sol Blade Rectangle Rojo (USD 465)","3. Casco Negro/blanco (USD 895)","4. Vaso Tumbler Plateado (USD 250)","5.Cinturón Skater Unity Negro (USD 325)"]
 
-#Lista Medios de Pago Disponibles 
+#Lista de medios de Pago DISPONIBLES
 mediospago = [
     "1. MercadoPago",
     "2. Débito",
@@ -31,14 +31,10 @@ mediospago = [
 ]
 
 
+############################################################################# FUNCIONES #############################################################################
 
 
-################################################## Funciones ####################################################
-
-
-
-
-#FUNCION MENU
+# FUNCION MENU
 def mostrar_menu():
     print("\nSeleccione una categoría de producto:")
     print(productos)
@@ -46,7 +42,7 @@ def mostrar_menu():
     categoria = int(input("Seleccione una opción: "))
 
     while categoria <1 or categoria >5:
-        print("El numero de categoria no esta entre las disponibles. Vuelva a intentarlo.")
+        print("El numero de categoria no esta entre las disponibles, por favor vuelva a intentarlo: ")
         categoria = int(input("Seleccione una opción: "))
 
     return categoria
@@ -54,130 +50,130 @@ def mostrar_menu():
 
 
 
-#FUNCION CATEGORIAS 
+# FUNCION Categoria 
 def mostrar_productos_categoria(categoria,):
 
     print("\nProductos disponibles:")
-    print("------------------------------------------------------------------")
-    if categoria == 1:              # REMERAS
+    print("-------------------------------------")
+    if categoria == 1:    # Remeras
         for producto in categoria1:
             print(producto)
-        print("------------------------------------------------------------------")
+        print("-------------------------------------")
         productofin = int(input("\nIngrese el producto que desea elegir: "))
 
         while  productofin <1 or productofin >5:
             print("El número de producto ingresado no corresponde a los disponibles. Intentelo nuevamente.")
             productofin = int(input("Ingrese el producto que desea elegir: "))
 
-        if productofin == 1: 
-            lista_productos.append(categoria1[0])    # Funcion APPEND (AGREGAR A LA LISTA)
+        if productofin == 1:
+            lista_productos.append(categoria1[0])    # Funcion APPEND (Agregar a la lista)
         elif productofin == 2 :
-            lista_productos.append(categoria1[1])    # Funcion APPEND (AGREGAR A LA LISTA)
-        elif productofin == 3 : 
-            lista_productos.append(categoria1[2])    # Funcion APPEND (AGREGAR A LA LISTA)
-        elif productofin == 4 : 
-            lista_productos.append(categoria1[3])    # Funcion APPEND (AGREGAR A LA LISTA)
-        elif productofin == 5 : 
-            lista_productos.append(categoria1[4])    # Funcion APPEND (AGREGAR A LA LISTA)
+            lista_productos.append(categoria1[1])    # Funcion APPEND (Agregar a la lista)
+        elif productofin == 3 :
+            lista_productos.append(categoria1[2])    # Funcion APPEND (Agregar a la lista)
+        elif productofin == 4 :
+            lista_productos.append(categoria1[3])    # Funcion APPEND (Agregar a la lista)
+        elif productofin == 5 :
+            lista_productos.append(categoria1[4])    # Funcion APPEND (Agregar a la lista)
         return productofin
 
-    elif categoria == 2:            # PANTALONES
+    elif categoria == 2:    # Pantalones
         for producto in categoria2:
             print(producto)
-        print("------------------------------------------------------------------")
+        print("-------------------------------------")
         productofin = int(input("\nIngrese el producto que desea elegir: "))
 
         while  productofin <1 or productofin >5:
             print("El número de producto ingresado no corresponde a los disponibles. Intentelo nuevamente.")
             productofin = int(input("Ingrese el producto que desea elegir: "))
 
-        if productofin == 1: 
+        if productofin == 1:
             lista_productos.append(categoria2[0])
         elif productofin == 2 :
             lista_productos.append(categoria2[1])
-        elif productofin == 3 : 
+        elif productofin == 3 :
             lista_productos.append(categoria2[2])
-        elif productofin == 4 : 
+        elif productofin == 4 :
             lista_productos.append(categoria2[3])
-        elif productofin == 5 : 
+        elif productofin == 5 :
             lista_productos.append(categoria2[4])
         return productofin
 
-    elif categoria == 3:            # CAMPERAS
+    elif categoria == 3:     # Camperas
         for producto in categoria3:
             print(producto)
-        print("------------------------------------------------------------------")
+        print("-------------------------------------")
         productofin = int(input("\nIngrese el producto que desea elegir: "))
 
         while  productofin <1 or productofin >5:
             print("El número de producto ingresado no corresponde a los disponibles. Intentelo nuevamente.")
             productofin = int(input("Ingrese el producto que desea elegir: "))
 
-        if productofin == 1: 
+        if productofin == 1:
             lista_productos.append(categoria3[0])
         elif productofin == 2 :
             lista_productos.append(categoria3[1])
-        elif productofin == 3 : 
+        elif productofin == 3 :
             lista_productos.append(categoria3[2])
-        elif productofin == 4 : 
+        elif productofin == 4 :
             lista_productos.append(categoria3[3])
-        elif productofin == 5 : 
+        elif productofin == 5 :
             lista_productos.append(categoria3[4])
         return productofin
 
-    elif categoria == 4:            # CALZADO
+    elif categoria == 4:     # Calzado
         for producto in categoria4:
             print(producto)
-        print("------------------------------------------------------------------")
+        print("-------------------------------------")
         productofin = int(input("\nIngrese el producto que desea elegir: "))
 
         while  productofin <1 or productofin >5:
             print("El número de producto ingresado no corresponde a los disponibles. Intentelo nuevamente.")
             productofin = int(input("Ingrese el producto que desea elegir: "))
 
-        if productofin == 1: 
+        if productofin == 1:
             lista_productos.append(categoria4[0])
         elif productofin == 2 :
             lista_productos.append(categoria4[1])
-        elif productofin == 3 : 
+        elif productofin == 3 :
             lista_productos.append(categoria4[2])
-        elif productofin == 4 : 
+        elif productofin == 4 :
             lista_productos.append(categoria4[3])
-        elif productofin == 5 : 
+        elif productofin == 5 :
             lista_productos.append(categoria4[4])
 
         return productofin
 
-    elif categoria == 5:            # ACCESORIOS
+    elif categoria == 5:     # Accesorios
         for producto in categoria5:
             print(producto)
-        print("------------------------------------------------------------------")
+        print("-------------------------------------")
         productofin = int(input("\nIngrese el producto que desea elegir: "))
 
         while  productofin <1 or productofin >5:
             print("El número de producto ingresado no corresponde a los disponibles. Intentelo nuevamente.")
             productofin = int(input("Ingrese el producto que desea elegir: "))
 
-        if productofin == 1: 
+        if productofin == 1:
             lista_productos.append(categoria5[0])
         elif productofin == 2 :
             lista_productos.append(categoria5[1])
-        elif productofin == 3 : 
+        elif productofin == 3 :
             lista_productos.append(categoria5[2])
-        elif productofin == 4 : 
+        elif productofin == 4 :
             lista_productos.append(categoria5[3])
-        elif productofin == 5 : 
+        elif productofin == 5 :
             lista_productos.append(categoria5[4])
         return productofin
 
 
 
 
-#FUNCION CONSULTAR TALLE
+# Funcion CONSULTAR TALLE
 def consultar_talle(categoria):
-    if categoria == 1:              # REMERAS
+    if categoria == 1:     # Remeras
         print(talles)
-        talle = input("Seleccione un talle: ").upper()      # el UPPER es una funcion integrada en python que convierte todas las letras de un string a mayúsculas.
+        talle = input("Seleccione un talle: ").upper()    # UPPER es una funcion integrada en python que convierte todas las letras de un string en MAYUSCULA
 
         while talle != "XS" and talle != "S" and talle != "M" and talle != "L" and talle != "XL" :
             print("El talle no se encuentra dentro de las opiones disponibles.")
@@ -186,7 +182,7 @@ def consultar_talle(categoria):
 
         lista_talles_productos.append(talle)
 
-    elif categoria == 2:            # PANTALONES
+    elif categoria == 2:     # Pantalones
         print(talles)
         talle = input("Seleccione un talle: ").upper()
 
@@ -197,7 +193,7 @@ def consultar_talle(categoria):
 
         lista_talles_productos.append(talle)
 
-    elif categoria == 3:            # CAMPERAS
+    elif categoria == 3:      # Camperas
         print(talles)
         talle = input("Seleccione un talle: ").upper()
 
@@ -208,7 +204,7 @@ def consultar_talle(categoria):
 
         lista_talles_productos.append(talle)
 
-    elif categoria == 4:             # CALZADO
+    elif categoria == 4:      # Calzado
         print(talles_calzado)
         talle = int(input("Seleccione un talle: "))
 
@@ -219,7 +215,7 @@ def consultar_talle(categoria):
 
         lista_talles_productos.append(talle)
 
-    else:                            # ACCESORIOS (TALLES UNICOS)
+    else:                     # Accesorios (Talle Unico)
         print("Talle único")
         talle = "Talle unico"
         lista_talles_productos.append(talle)
@@ -229,90 +225,90 @@ def consultar_talle(categoria):
 
 
 
-#FUNCION     (AGREGAR AL CARRITO)
-def agregar_al_carrito(categoria, productofin):
+# FUNCION Agregar al carrito
+def agregar_al_carrito(productofin, categoria):
     if categoria == 1:
-        if productofin == 1 : 
+        if productofin == 1 :
             precio = 795
             lista_precio_productos.append(precio)
-        if productofin == 2 : 
+        if productofin == 2 :
             precio = 1100
             lista_precio_productos.append(precio)
-        if productofin == 3 : 
+        if productofin == 3 :
             precio = 450
             lista_precio_productos.append(precio)
-        if productofin == 4 : 
+        if productofin == 4 :
             precio = 695
             lista_precio_productos.append(precio)
-        if productofin == 5 : 
+        if productofin == 5 :
             precio = 395
             lista_precio_productos.append(precio)
 
     elif categoria == 2:
-        if productofin == 1 : 
+        if productofin == 1 :
             precio = 1300
             lista_precio_productos.append(precio)
-        if productofin == 2 : 
+        if productofin == 2 :
             precio = 1100
             lista_precio_productos.append(precio)
-        if productofin == 3 : 
+        if productofin == 3 :
             precio = 1800
             lista_precio_productos.append(precio)
-        if productofin == 4 : 
+        if productofin == 4 :
             precio = 1590
             lista_precio_productos.append(precio)
-        if productofin == 5 : 
+        if productofin == 5 :
             precio = 1600
             lista_precio_productos.append(precio)
 
     elif categoria == 3:
-        if productofin == 1 : 
+        if productofin == 1 :
             precio = 7500
             lista_precio_productos.append(precio)
-        if productofin == 2 : 
+        if productofin == 2 :
             precio = 3000
             lista_precio_productos.append(precio)
-        if productofin == 3 : 
+        if productofin == 3 :
             precio = 3200
             lista_precio_productos.append(precio)
-        if productofin == 4 : 
+        if productofin == 4 :
             precio = 2600
             lista_precio_productos.append(precio)
-        if productofin == 5 : 
+        if productofin == 5 :
             precio = 5000
             lista_precio_productos.append(precio)
 
     elif categoria == 4:
-        if productofin == 1 : 
+        if productofin == 1 :
             precio = 975
             lista_precio_productos.append(precio)
-        if productofin == 2 : 
+        if productofin == 2 :
             precio = 995
             lista_precio_productos.append(precio)
-        if productofin == 3 : 
+        if productofin == 3 :
             precio = 1100
             lista_precio_productos.append(precio)
-        if productofin == 4 : 
+        if productofin == 4 :
             precio = 1650
             lista_precio_productos.append(precio)
-        if productofin == 5 : 
+        if productofin == 5 :
             precio = 1990
             lista_precio_productos.append(precio)
 
     elif categoria == 5:
-        if productofin == 1 : 
+        if productofin == 1 :
             precio = 450
             lista_precio_productos.append(precio)
-        if productofin == 2 : 
+        if productofin == 2 :
             precio = 465
             lista_precio_productos.append(precio)
-        if productofin == 3 : 
+        if productofin == 3 :
             precio = 895
             lista_precio_productos.append(precio)
-        if productofin == 4 : 
+        if productofin == 4 :
             precio = 250
             lista_precio_productos.append(precio)
-        if productofin == 5 : 
+        if productofin == 5 :
             precio = 325
             lista_precio_productos.append(precio)
 
@@ -321,10 +317,10 @@ def agregar_al_carrito(categoria, productofin):
 
 
 
-#Funcion Seleccion metodo de pago
+# FUNCION Selecciona metodo de pago
 def seleccionar_metodo_pago(preciototal):
     print("\nMétodos de pago disponibles:")
-    for medio in mediospago:           # IMPRIMIR EN VERTICAL
+    for medio in mediospago:    #Imprimir en Vertical 
         print(medio)
 
     opcion = 0
@@ -344,12 +340,12 @@ def seleccionar_metodo_pago(preciototal):
         else:
             print("Opción inválida. Intente nuevamente.")
 
-    if opcion == 5:       # EFECTIVO
+    if opcion == 5:      # Efectivo
         preciototal *= 0.90
         print("\nAplica 10% de descuento por pago en efectivo.")
-        print(f"Total a pagar: ${preciototal:.2f}")       # :.2f PARA QUE CORTE EN 2 DECIMALES
+        print(f"Total a pagar: ${preciototal:.2f}")     # :.2f PARA QUE CORTE EN 2 Decimales
 
-    elif opcion == 3:     # Credito
+    elif opcion == 3:    # Credito
         print("\n¿Desea pagar en cuotas?")
         print("1. 1 cuota (sin interés)")
         print("2. 3 cuotas (sin interés)")
@@ -377,10 +373,10 @@ def seleccionar_metodo_pago(preciototal):
             total = preciototal
             cantidad_cuotas = 3
         elif cuotas == 3:
-            total = preciototal * 1.10   # 10% de recargo
+            total = preciototal * 1.10    # Recargo del %10 
             cantidad_cuotas = 6
         elif cuotas == 4:
-            total = preciototal * 1.20   # 20% de recargo
+            total = preciototal * 1.20    # Recargo del %20
             cantidad_cuotas = 12
 
         print(f"\nTotal a pagar: ${total:.2f}")
@@ -392,75 +388,79 @@ def seleccionar_metodo_pago(preciototal):
 
 
 
-def Lista_ID():
-    # Se vacia la lista, esto es para que si se elimina un objeto se reasignen los numeros 
-    while len(lista_id) > 0:
-        lista_id.pop()  # Borra toda la lista, la vacia
+def Lista_ID():      # Se vacia la lista, esto es para que si se elimina un objeto se reasignen los numeros
+    while len(lista_id) > 0:    
+        lista_id.pop()     # Borra TODA la lista
 
-    # Generamos nuevos Ids para la lista
-    for i in range(len(lista_productos)):   # Se asignan un ID para cada producto en orden
-        lista_id.append(i + 1)
+    for i in range(len(lista_productos)):      # GENERAMOS Nuevos IDs para la Lista
+        lista_id.append(i + 1)        # Se asignan un ID para c/producto en orden
 
 
 
 
-# FUNCION  (❌ ELIMINAR PRODUCTOS)    BUSQUEDA SECUENCIAL (LINEAL)
-def BuscarProducto(buscar): 
-    if len(lista_id) != 1:    # Para que no te deje usar esta funcion si SOLO tenes 1 PRODUCTO EN EL CARRITO
-        buscar = True
+# FUNCION     ELIMINAR PRODUCTOS             BUSQUEDA SECUENCIAL (LINEAL)
+def BuscarProducto(buscar):
+    if len(lista_id) != 0:     #Para que no te deje usar esta funcion si SOLO tenes 1 producto en el carrito
+        buscar_input = True
         se_elimino_producto = False
 
-        while buscar == True:
-            if len(lista_id) != 1:
+        while buscar_input == True:
+            if len(lista_id) != 0:
+                buscar_choice = input("¿Desea eliminar algún producto del carrito?  (s/n): ").lower()
 
-                buscar = input("¿Desea eliminar algún producto del carrito? ❌ (s/n): ").lower()
-
-                while buscar != "s" and buscar != "n": 
+                while buscar_choice != "s" and buscar_choice != "n":
                     print("Error de digitación, vuelva a intentarlo. ")
-                    buscar = input("¿Desea eliminar algún producto del carrito? (s/n): ").lower()
+                    buscar_choice = input("¿Desea eliminar algún producto del carrito? (s/n): ").lower()
 
-                if buscar == "s":
-                    buscar = True  # sigue preguntando luego
+                if buscar_choice == "s":
+                    buscar_input = True
+
+                    if not lista_id:
+                        print("No hay productos en el carrito para eliminar.")
+                        buscar_input = False
+                        break
 
                     producto = int(input("Ingrese el número del producto que desea eliminar: "))
                     producto_encontrado = False
-                    i = 0
                     eliminado = False
 
-                    while i < len(lista_id) and eliminado == False:
-                        if lista_id[i] == producto:
+                    for i, item_id in enumerate(lista_id):
+                        if item_id == producto:
                             producto_encontrado = True
                             print("\n-----------------------------------------------------")
                             print(f"""
-        Producto ELIMINADO ❌ : {lista_productos[i]}
+        Producto ELIMINADO  : {lista_productos[i]}
         Precio: ${lista_precio_productos[i]}
         Talle: {lista_talles_productos[i]}
                             """)
 
-                            lista_id.pop(i)    # .pop Se elimina de la lista 
-                            lista_productos.pop(i)   # .pop Se elimina de la lista 
-                            lista_talles_productos.pop(i)  # .pop Se elimina de la lista 
-                            lista_precio_productos.pop(i)  # .pop Se elimina de la lista 
-                            print("El producto fue eliminado con éxito. ✅")
+                            lista_id.pop(i)        # .pop se limina de la lista
+                            lista_productos.pop(i)    # .pop se limina de la lista
+                            lista_talles_productos.pop(i)   # .pop se limina de la lista
+                            lista_precio_productos.pop(i)   # .pop se limina de la lista
+                            print("El producto fue eliminado con éxito. ")
                             eliminado = True
                             se_elimino_producto = True
-                        else:
-                            i += 1
+                            break
 
-                    if producto_encontrado == False:
+                    if not producto_encontrado:
                         print("El producto no existe, Intente con otro número.")
 
-                else: 
-                    buscar = False
+                else:
+                    buscar_input = False
             else:
-                buscar = False
+                print("El carrito está vacío. No hay productos para eliminar.")
+                buscar_input = False
         return se_elimino_producto
+    else:
+        print("El carrito está vacío. No hay productos para eliminar.")
+        return False
 
 
 
 
-#Funcion que suma el total de la lista donde estan guardados los precios unitarios en un total 
-def Suma_Precio_Total(precio): 
+# FUNCION que Suma el total de la lista donde estan guardados los preicos unitarios en un total
+def Suma_Precio_Total(precio_ignorado):
     iteraciones = len(lista_precio_productos)
     preciototal = 0
     for i in range (iteraciones):
@@ -470,17 +470,18 @@ def Suma_Precio_Total(precio):
 
 
 
-def MatrizProductos (precio): 
-    
+
+def MatrizProductos (total_a_mostrar):
+
     for i in range (len(lista_productos)):
         print("\nNumero de producto:",lista_id[i],"|",lista_productos[i],"|",lista_talles_productos[i],"|","$",lista_precio_productos[i])
-    print("\n-----------------------------------------------------")    
-    print("\nEl precio total es: $",Suma_Precio_Total(precio))
+    print("\n-----------------------------------------------------")
+    print("\nEl precio total es: $", total_a_mostrar)
 
 
 
 
-#Funcion Desea Salir del programa? Al final
+# FUNCION Desea Salir del programa?
 def desea_salir():
     opcion = input("¿Desea salir? (s/n): ").lower()
     if opcion == "s":
@@ -489,45 +490,38 @@ def desea_salir():
 
 
 
-
-#Funcion finalizacion de compra
+# FUNCION  Finalizar compra
 def finalizar_compra():
-    print("\n✅ Gracias por realizar la compra 🛍️")
+    print("\n Gracias por realizar la compra ")
 
 
 
-
-#Funcion desea seguir comprando
+# FUNCION Desea seguir comprando?
 def desea_seguir_comprando():
     opcion = input("\n¿Desea seguir comprando? (s/n): ")
     if opcion == "s" or opcion == "S":
-        return True 
+        return True
     return False
 
 
 
 
-#--------------------------------------------------------programa PRINCIPAL----------------------------------------------------------#
-
-
+#-------------------------------------------------------------------------Programa PRINCIPAL ----------------------------------------------------------------#    
 
 salir = True
 
+while salir :     # es lo mismo que decir while salir == True:
 
-while salir :
-    
-    lista_id = []
-    lista_precio_productos = []
-    lista_productos = []
-    lista_talles_productos = []
-    nombres = []
-    
-    nombre = input("Ingrese su nombre: ")
-    nombres.append(nombre)
+    lista_id = []     # Se vacian las listas para cada iteracion
+    lista_precio_productos = []    # Se vacian las listas para cada iteracion
+    lista_productos = []    # Se vacian las listas para cada iteracion
+    lista_talles_productos = []    # Se vacian las listas para cada iteracion
 
-    seguircomprando = True
+    nombre_usuario = input("Ingrese su nombre: ")
 
-    while seguircomprando : 
+    seguircomprando = True    # Se inicializa el ciclo, hace lo mismo que el "salir == True:""
+
+    while seguircomprando :
 
         categoria = mostrar_menu()
 
@@ -535,31 +529,25 @@ while salir :
 
         consultar_talle(categoria)
 
-        precio = agregar_al_carrito(productofin, categoria)
+        agregar_al_carrito(productofin, categoria)
 
-        preciototal = Suma_Precio_Total(precio)
+        seguircomprando = desea_seguir_comprando()   # Se define si, si o no el ciclo
 
-        seguircomprando = desea_seguir_comprando()
+    Lista_ID()    # Esta fuera del ciclo ya que ya estan definiados los productos 
 
+    preciototal_final = Suma_Precio_Total(0)
 
-    Lista_ID()
+    MatrizProductos(preciototal_final)      # Se muestra la lista de productos seleccionados
 
-#control de listas iguales 
-#    print(len(lista_id), len(lista_productos), len(lista_talles_productos), len(lista_precio_productos))
+    se_elimino_algun_producto = BuscarProducto(preciototal_final)
 
+    if se_elimino_algun_producto: # es igual que decir if se_elimino_algun_producto == True:
+        preciototal_final = Suma_Precio_Total(0) # Se recalcula en caso de que se haya algun producto de la lista
+        Lista_ID()  # Vuelve a crear la lista de IDs para que se reasignen los ordenes de la lista
+        MatrizProductos(preciototal_final)  #Tira la matriz de productos actualizada
 
-    MatrizProductos(preciototal)
+    seleccionar_metodo_pago(preciototal_final)
 
-
-    eliminado = BuscarProducto(preciototal)
-    
-    if eliminado:
-        preciototal = Suma_Precio_Total(precio) #se recalcula en caso de que se haya eliminado algun producto de la lista
-        Lista_ID()
-        MatrizProductos(precio)
-
-    metodo_de_pago = seleccionar_metodo_pago(preciototal)
-
-    finalizar_compra()
+    finalizar_compra()   # Print "gracias por finalizar la compra"
 
     salir = desea_salir()
