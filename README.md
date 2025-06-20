@@ -1,7 +1,7 @@
-🛒 Simulador de Tienda de Ropa (Consola)
+# 🛒 Simulador de Tienda de Ropa (Consola)
 Este proyecto es una aplicación de consola en Python que simula una experiencia de compra en una tienda de ropa y accesorios de lujo. El usuario puede seleccionar una categoría, elegir productos, indicar talles, agregar productos al carrito y seleccionar un medio de pago. El sistema calcula el precio total con posibles descuentos o recargos según el método de pago elegido.
 
-📌 Funcionalidades principales
+# 📌 Funcionalidades principales
 Menú interactivo con selección de categorías de productos.
 
 Visualización de productos por categoría con sus precios.
@@ -16,7 +16,7 @@ Recargos por financiación con tarjeta de crédito (3, 6 o 12 cuotas).
 
 Validación de entradas del usuario para evitar errores de ingreso.
 
-🧰 Tecnologías utilizadas
+# 🧰 Tecnologías utilizadas
 Python 3: Lenguaje principal del proyecto.
 
 Funciones: Separación lógica de tareas como mostrar menús, consultar talle, agregar al carrito y seleccionar método de pago.
@@ -25,7 +25,7 @@ Estructuras de datos: Uso de listas para almacenar nombres de clientes, producto
 
 Control de flujo: Condicionales y bucles while para manejar las opciones del usuario.
 
-🔧 Métodos y Estructura
+# 🔧 Métodos y Estructura
 Listas
 Se utilizan múltiples listas para almacenar información del usuario y de los productos:
 
@@ -48,26 +48,3 @@ agregar_al_carrito(productofin, categoria): añade el precio del producto selecc
 
 seleccionar_metodo_pago(preciototal): aplica descuentos o recargos según el método de pago.
 
-🚀 Cómo ejecutar el programa
-Asegurate de tener Python 3.x instalado.
-
-Descargá el archivo .py del proyecto o cloná el repositorio:
-
-bash
-Copy
-Edit
-git clone https://github.com/tu-usuario/tu-repositorio.git
-Ejecutalo desde la terminal o tu IDE favorito:
-
-bash
-Copy
-Edit
-python tienda_virtual.py
-📌 Posibles mejoras a futuro
-Implementar una interfaz gráfica con Tkinter o PyQt.
-
-Añadir sistema de login de usuarios.
-
-Guardar historial de compras.
-
-Integración con base de datos para persistencia.
