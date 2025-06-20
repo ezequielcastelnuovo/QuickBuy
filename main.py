@@ -399,62 +399,56 @@ def Lista_ID():      # Se vacia la lista, esto es para que si se elimina un obje
 
 
 # FUNCION     ELIMINAR PRODUCTOS             BUSQUEDA SECUENCIAL (LINEAL)
-def BuscarProducto(buscar):
-    if len(lista_id) != 0:     #Para que no te deje usar esta funcion si SOLO tenes 1 producto en el carrito
-        buscar_input = True
+def BuscarProducto(buscar): 
+    if len(lista_id) != 1:    # Para que no te deje usar esta funcion si SOLO tenes 1 PRODUCTO EN EL CARRITO
+        buscar = True
         se_elimino_producto = False
 
-        while buscar_input == True:
-            if len(lista_id) != 0:
-                buscar_choice = input("¿Desea eliminar algún producto del carrito?  (s/n): ").lower()
+        while buscar == True:
+            if len(lista_id) != 1:
 
-                while buscar_choice != "s" and buscar_choice != "n":
+                buscar = input("¿Desea eliminar algún producto del carrito? ❌ (s/n): ").lower()
+
+                while buscar != "s" and buscar != "n": 
                     print("Error de digitación, vuelva a intentarlo. ")
-                    buscar_choice = input("¿Desea eliminar algún producto del carrito? (s/n): ").lower()
+                    buscar = input("¿Desea eliminar algún producto del carrito? (s/n): ").lower()
 
-                if buscar_choice == "s":
-                    buscar_input = True
-
-                    if not lista_id:
-                        print("No hay productos en el carrito para eliminar.")
-                        buscar_input = False
-                        break
+                if buscar == "s":
+                    buscar = True  # sigue preguntando luego
 
                     producto = int(input("Ingrese el número del producto que desea eliminar: "))
                     producto_encontrado = False
+                    i = 0
                     eliminado = False
 
-                    for i, item_id in enumerate(lista_id):
-                        if item_id == producto:
+                    while i < len(lista_id) and eliminado == False:
+                        if lista_id[i] == producto:
                             producto_encontrado = True
                             print("\n-----------------------------------------------------")
                             print(f"""
-        Producto ELIMINADO  : {lista_productos[i]}
+        Producto ELIMINADO ❌ : {lista_productos[i]}
         Precio: ${lista_precio_productos[i]}
         Talle: {lista_talles_productos[i]}
                             """)
 
-                            lista_id.pop(i)        # .pop se limina de la lista
-                            lista_productos.pop(i)    # .pop se limina de la lista
-                            lista_talles_productos.pop(i)   # .pop se limina de la lista
-                            lista_precio_productos.pop(i)   # .pop se limina de la lista
-                            print("El producto fue eliminado con éxito. ")
+                            lista_id.pop(i)
+                            lista_productos.pop(i)
+                            lista_talles_productos.pop(i)
+                            lista_precio_productos.pop(i)
+                            print("El producto fue eliminado con éxito. ✅")
                             eliminado = True
                             se_elimino_producto = True
-                            break
+                        else:
+                            i += 1
 
-                    if not producto_encontrado:
+                    if producto_encontrado == False:
                         print("El producto no existe, Intente con otro número.")
 
-                else:
-                    buscar_input = False
+                else: 
+                    buscar = False
             else:
-                print("El carrito está vacío. No hay productos para eliminar.")
-                buscar_input = False
+                buscar = False
         return se_elimino_producto
-    else:
-        print("El carrito está vacío. No hay productos para eliminar.")
-        return False
 
 
 
