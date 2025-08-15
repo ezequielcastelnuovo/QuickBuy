@@ -1,50 +1,42 @@
-# 🛒 Simulador de Tienda de Ropa (Consola)
-Este proyecto es una aplicación de consola en Python que simula una experiencia de compra en una tienda de ropa y accesorios de lujo. El usuario puede seleccionar una categoría, elegir productos, indicar talles, agregar productos al carrito y seleccionar un medio de pago. El sistema calcula el precio total con posibles descuentos o recargos según el método de pago elegido.
+# 🛒 Clothing Store Simulator (Console)
 
-# 📌 Funcionalidades principales
-Menú interactivo con selección de categorías de productos.
+This project is a Python console application that simulates a shopping experience in a luxury clothing and accessories store.
+The user can select a category, choose products, indicate sizes, add products to the cart, and select a payment method.
+The system calculates the total price with possible discounts or surcharges depending on the chosen payment method.
 
-Visualización de productos por categoría con sus precios.
+# 📌 Main Features
 
-Selección de talle (ropa, calzado o talle único).
+* Interactive menu with product category selection.
+* Display of products by category with their prices.
+* Size selection (clothing, footwear, or one-size).
+* Calculation of the total cart price based on selected products.
+* Discounts for cash payments.
+* Surcharges for credit card installments (3, 6, or 12 payments).
+* User input validation to avoid entry errors.
 
-Cálculo del total del carrito según productos elegidos.
+# 🧰 Technologies Used
 
-Descuentos por pago en efectivo.
+* **Python 3**: Main programming language of the project.
+* **Functions**: Logical separation of tasks such as displaying menus, checking sizes, adding items to the cart, and selecting the payment method.
+* **Data structures**: Lists for storing customer names, products, sizes, and prices.
+* **Flow control**: Conditionals and `while` loops to manage user options.
 
-Recargos por financiación con tarjeta de crédito (3, 6 o 12 cuotas).
+# 🔧 Methods and Structure
 
-Validación de entradas del usuario para evitar errores de ingreso.
+### Lists
 
-# 🧰 Tecnologías utilizadas
-Python 3: Lenguaje principal del proyecto.
+Multiple lists are used to store user and product information:
 
-Funciones: Separación lógica de tareas como mostrar menús, consultar talle, agregar al carrito y seleccionar método de pago.
+* `lista_productos`, `lista_talles_productos`, `lista_precio_productos`: information about the shopping cart.
+* `productos`, `categoria1` to `categoria5`: predefined lists of available products by category.
+* `talles`, `talles_calzado`: available sizes depending on the product type.
+* `mediospago`: available payment options.
 
-Estructuras de datos: Uso de listas para almacenar nombres de clientes, productos, talles y precios.
+### Key Functions
 
-Control de flujo: Condicionales y bucles while para manejar las opciones del usuario.
-
-# 🔧 Métodos y Estructura
-Listas
-Se utilizan múltiples listas para almacenar información del usuario y de los productos:
-
-lista_productos, lista_talles_productos, lista_precio_productos: información sobre el carrito.
-
-productos, categoria1 a categoria5: listas predefinidas de productos disponibles por categoría.
-
-talles, talles_calzado: talles disponibles según tipo de producto.
-
-mediospago: opciones de pago disponibles.
-
-Funciones destacadas
-mostrar_menu(): muestra las categorías disponibles y solicita la elección del usuario.
-
-mostrar_productos_categoria(categoria): muestra productos según la categoría seleccionada.
-
-consultar_talle(categoria): permite seleccionar el talle correspondiente según el tipo de producto.
-
-agregar_al_carrito(productofin, categoria): añade el precio del producto seleccionado al total.
-
-seleccionar_metodo_pago(preciototal): aplica descuentos o recargos según el método de pago.
+* **`mostrar_menu()`**: Displays the available categories and prompts the user for a selection.
+* **`mostrar_productos_categoria(categoria)`**: Shows products based on the selected category.
+* **`consultar_talle(categoria)`**: Allows the selection of the appropriate size depending on the product type.
+* **`agregar_al_carrito(productofin, categoria)`**: Adds the price of the selected product to the total.
+* **`seleccionar_metodo_pago(preciototal)`**: Applies discounts or surcharges depending on the payment method.
 
